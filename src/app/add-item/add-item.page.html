@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="warning">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    <ion-title >Sell Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<p style="text-align: center;font-size: 22px;">Add Product Details</p>
+<div  style="padding: 10px;    ">
+<div>Add Product/Item Images</div>
+
+<ion-grid style="margin-top: 3px;">
+    <ion-row style="text-align: center;">
+      <ion-col style="margin: 1px;">
+        <img [src]="image1" (click)="SelectFileToUpload(1)">
+      </ion-col>
+      <ion-col style="margin: 1px;" (click)="SelectFileToUpload(2)">
+          <img [src]="image2">
+   
+        </ion-col>
+        <ion-col style="margin: 1px;" (click)="SelectFileToUpload(3)">
+            <img [src]="image3">
+   
+          </ion-col>
+      </ion-row>
+      </ion-grid>
+
+      <ion-item>
+          <ion-input  placeholder="Product Title" [(ngModel)]='p_title'></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input  placeholder="Description"  [(ngModel)]='desc'></ion-input>
+          </ion-item>
+      <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-input type="number" placeholder="Original Price"  [(ngModel)]='orignal_price'>$</ion-input>
+                  </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-input type="number" placeholder="Selling Price" [(ngModel)]='selling_price'>$</ion-input>
+                  </ion-item>
+            </ion-col>
+        </ion-row>
+      </ion-grid> 
+      <!--  -->
+      <ion-list >
+         
+          <ion-item>
+              <ion-label>Rent</ion-label>
+              <ion-toggle [(ngModel)]="sell_rent"></ion-toggle>
+            </ion-item>
+          
+        
+      </ion-list> 
+      <ion-item>
+          <ion-label>Category</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]='category'>
+            <ion-select-option value="books">Books</ion-select-option>
+            <ion-select-option value="electronics">Electronics</ion-select-option>
+            <ion-select-option value="car">Car</ion-select-option>
+            <ion-select-option value="sport">Sport</ion-select-option>
+            <ion-select-option value="stationary">Stationary</ion-select-option>
+            <ion-select-option value="futniture">Furniture</ion-select-option>
+            <ion-select-option value="fashion">Fashion</ion-select-option>
+            <ion-select-option value="other">Study/Other Material</ion-select-option>
+
+          </ion-select>
+        </ion-item>  
+
+        <ion-button expand="block" style="margin-top: 20px;" (click)="PostAd()">Post Ad</ion-button>
+</div>
+</ion-content>

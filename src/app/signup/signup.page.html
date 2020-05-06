@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="text-align: center;
+  padding: 20px;">
+  <img src="assets/imgs/campusStoreLogo.png" style="   margin-left: 34%; height: 100px;
+  width: 100px;">
+   <ion-input placeholder="Enter Full Name" [(ngModel)]="username" style="border: 1px solid rgba(173, 173, 173, 0.71);
+   margin-top: 10px;
+   border-radius: 20px;"></ion-input>
+   <ion-input placeholder="Enter Phone Number" [(ngModel)]="phone" style="border: 1px solid rgba(173, 173, 173, 0.71);
+      margin-top: 10px;
+      border-radius: 20px;"></ion-input>
+      <ion-input placeholder="Enter Email" [(ngModel)]="email" style="border: 1px solid rgba(173, 173, 173, 0.71);
+      margin-top: 10px;
+      border-radius: 20px;"></ion-input>
+      <ion-input placeholder="Enter Password"  [(ngModel)]="password" style="border: 1px solid rgba(173, 173, 173, 0.71);
+      margin-top: 10px;
+      border-radius: 20px;"></ion-input>
+       <ion-button color="primary"  expand="full" (click)="SignUp()" style="margin-top: 7%;">
+          <ion-icon slot="start" name="create"></ion-icon>
+        Create Account</ion-button>
+
+        <ion-button color="success"  expand="full" (click)="Login()" style="margin-top: 3%;">
+            <ion-icon slot="start" name="log-in"></ion-icon>
+         Login</ion-button>
+    
+  </ion-card>
+  <img src="https://image.freepik.com/free-vector/online-shopping-concept-landing-page_23-2148249252.jpg">
+</ion-content>

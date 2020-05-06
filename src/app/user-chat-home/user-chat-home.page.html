@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="warning">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Users List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+      <ion-list *ngFor="let data of UserList">
+  <ion-item (click)="ChatWithUser(data.email_2,data.chat_key,title)" style="    height: 100px;
+  ">
+    <ion-avatar style="width: 65px;
+    margin-bottom: 22px;">
+      <img src="https://image.flaticon.com/icons/svg/149/149071.svg">
+      <!-- <span>R</span> -->
+    </ion-avatar>
+    <ion-label style="margin-left: 20px;">
+    
+      <h2 style="    font-size: 24px;" *ngIf="myEmail==data.email_1;else other">{{data.email_2}}</h2>
+    <p style="font-size: 16px;
+    margin-top: 6px;">{{data.title}}</p></ion-label>
+    <ng-template  #other>
+      <h2 style="    font-size: 24px;" >{{data.email_1}}</h2>
+    </ng-template >
+  </ion-item>
+
+</ion-list>
+</ion-content>

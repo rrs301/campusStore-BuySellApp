@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+   <!-- <ion-button color="primary" (click)="InsertSampleData()">Primary</ion-button> -->
+<ion-content>
+    <ion-card style="background-image: url(https://firebasestorage.googleapis.com/v0/b/campusstore-73af0.appspot.com/o/searchbg.jpg?alt=media&token=40a1d814-562a-4975-974c-dab8c291cf33);background-size: cover;">
+      <p style=" color:black;   
+      margin-top: 10%;margin-left: 12px;
+    font-size: 19px;
+    font-weight: 100;font-family: railway;
+      font-size: 19px;"><span style="font-size: 20px;
+    font-weight: 900;">Buy-Sell-Rent</span> <br>
+      Anything in your<br>University Campus</p>
+    <ion-card style="background: white;
+    padding-left: 20px;">
+      <ion-input placeholder="Enter Input" [(ngModel)]="searchMe"></ion-input>
+     
+    </ion-card>
+    <div style="text-align: center;
+    margin-top: -6px;
+    margin-bottom: 8px;"> <ion-button color="primary" style=" " (click)="Search()">  <ion-icon name="search"></ion-icon></ion-button></div>
+     </ion-card>
+
+     <div style="padding:10px">
+     <ion-grid style="margin-top: -20px;">
+        <ion-row style="text-align: center;">
+          <ion-col style="margin: 1px;
+          background: #f9f9f9;">
+            <img src="https://image.flaticon.com/icons/svg/1042/1042410.svg" style="height: 50px;" (click)="GetListOfItem('books')">
+            <div style="font-size: 13px;">Books</div>
+          </ion-col>
+          <ion-col style="margin: 1px;
+          background: #f9f9f9;">
+              <img src="https://image.flaticon.com/icons/svg/1948/1948883.svg" style="height: 50px;" (click)="GetListOfItem('electronics')">
+              <div style="font-size: 13px;">Electronics</div>
+          </ion-col>
+          <ion-col style="margin: 1px;
+          background: #f9f9f9;">
+              <img src="https://image.flaticon.com/icons/svg/2282/2282302.svg" style="height: 50px;" (click)="GetListOfItem('car')">
+              <div style="font-size: 13px;">Car</div>
+          </ion-col>
+          <ion-col style="margin: 1px;
+          background: #f9f9f9;">
+              <img src="https://image.flaticon.com/icons/svg/1519/1519443.svg" style="height: 50px;" (click)="GetListOfItem('sport')">
+              <div style="font-size: 13px;">Sports</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid> 
+      <ion-grid style="margin-top: -10px;">
+          <ion-row style="text-align: center;">
+            <ion-col style="margin: 1px;
+            background: #f9f9f9;">
+              <img src="https://image.flaticon.com/icons/svg/1373/1373058.svg" style="height: 50px;" (click)="GetListOfItem('stationary')">
+              <div style="font-size: 13px;">Stationary</div>
+            </ion-col>
+            <ion-col style="margin: 1px;
+            background: #f9f9f9;">
+                <img src="https://image.flaticon.com/icons/svg/2242/2242340.svg" style="height: 50px;" (click)="GetListOfItem('furniture')">
+                <div style="font-size: 13px;">Furniture</div>
+            </ion-col>
+            <ion-col style="margin: 1px;
+            background: #f9f9f9;">
+                <img src="https://image.flaticon.com/icons/svg/1785/1785244.svg" style="height: 50px;" (click)="GetListOfItem('fashion')">
+                <div style="font-size: 13px;">Fashion</div>
+            </ion-col>
+            <ion-col style="margin: 1px;
+            background: #f9f9f9;">
+                <img src="https://image.flaticon.com/icons/svg/2274/2274982.svg" style="height: 50px;" (click)="GetListOfItem('other')">
+                <div style="font-size: 13px;">Project/Other</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid> 
+    </div>     
+    <div>
+      <img src='assets/imgs/campustsorebanner.png'>
+    </div>
+    <p><span style="margin-left: 14px;">Latest in Your Campus</span><span style="float: right;
+      margin-right: 20px;" (click)="GetListOfItem(All)">More</span></p>
+
+
+    <div class="scrolling-wrapper" >
+        <div class="card" *ngFor="let item of items"> 
+          <ion-card (click)="productDetails(item.id)">
+            <img src="{{item.image1}}" style="height: 97px;">
+            <div style="       padding: 7px;
+            font-size: 17px;">{{item.p_name}}</div>
+            <div style="    margin-left: 6px;
+            font-size: 20px;
+            color: black;margin-bottom: 5px;
+            font-weight: 600;">{{item.selling_for}}$</div>
+          </ion-card>
+        </div>
+       
+        
+    </div>
+       
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="AddNewItem()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

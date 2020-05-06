@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="warning">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="items-lists"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Product Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div uk-lightbox>
+       
+    </div>
+    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: push">
+
+        <ul class="uk-slideshow-items" style="background: black;">
+            <li  uk-lightbox>
+                <a class="uk-button uk-button-default" href={{image1}}><img src="{{image1}}" > </a>
+              </li>
+            <li  uk-lightbox>
+                <a class="uk-button uk-button-default" href="{{image2}}"><img src="{{image2}}"></a>
+            </li>
+            <li  uk-lightbox>
+                <a class="uk-button uk-button-default" href="{{image3}}"><img src="{{image3}}"></a>
+ 
+            </li>
+        </ul>
+
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+    </div>
+
+    <div style=" margin: 20px;">
+      <div style="   
+      padding-left: 10px;
+      padding-top: 20px;"><span style="    background-image: linear-gradient(to right, #FF512F 0%, #DD2476 51%, #FF512F 100%);
+    border-radius: 25px;font-size: 10px;
+    color: white; padding:10px;padding-left: 21px;
+    padding-right: 20px;
+    padding-top: 13px;
+    padding-bottom: 12px;">{{cat}}</span>
+  <span>
+     <ion-button  color="warning" shape="round"  style="float: right;margin-top: -7px;
+     font-size: 10px;"  (click)="ShareDetails()">
+      <ion-icon name="share" style="margin-right: 10px;"></ion-icon>Share</ion-button> </span>  
+  </div>
+
+      <div>
+      <span style="font-size: 35px;
+      font-weight: 800;
+      margin-left: 10px;">${{price}}</span><span style="margin-left: 8px;
+    font-size: 19px;
+    text-decoration: line-through;
+    color: #8e8e8e;">${{mrp}}</span></div>
+       <div style="    font-size: 22px;
+       font-weight: 700;
+       margin-left: 13px;">{{title}}</div>
+
+       <hr style="background: #e3e2e0;">
+       <div>
+         <span style="background: #b7b9b8;
+         padding: 5px;
+         border-radius: 17px;
+         color: white;    padding-left: 12px;
+    padding-right: 12px;
+         margin-left: 8px;">Posted on: {{dateUpload}}</span>
+       </div>
+       <div style="padding: 13px;">
+         {{description}}
+       </div>
+   
+    </div>
+</ion-content>
+<ion-footer>
+  <div style="margin: 29px;">
+    <div *ngIf="isUsers!='yes'">
+  <ion-button color="primary" expand="full" (click)="CallUser()"><ion-icon name="mail" style="margin-right: 10px;" ></ion-icon>Mail</ion-button>
+  <ion-button color="secondary" expand="full" style="background: #34d06f;" (click)="SendMsg()">
+   <ion-icon name="chatbubbles" style="margin-right: 10px;"></ion-icon>Message</ion-button> 
+ </div>
+ <div *ngIf="isUsers=='yes'">
+   
+   <ion-button color="secondary" expand="full" style="    background: #F44336;" (click)="DeletePost()">
+       <ion-icon name="trash" style="margin-right: 10px;"></ion-icon>
+     Delete This Post
+ 
+ </ion-button>
+   </div>
+</div>
+</ion-footer>

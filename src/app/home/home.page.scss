@@ -1,0 +1,32 @@
+
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  .card {
+    display: inline-block;
+    width: 40%;
+  }
+}
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  .card {
+    flex: 0 0 auto;
+  }
+}
+.scrolling-wrapper {
+  -webkit-overflow-scrolling: touch;
+}
+.scrolling-wrapper {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

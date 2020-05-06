@@ -1,0 +1,24 @@
+.chat {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    border-radius: 5px;
+    margin: 0.2em 0;
+    padding: 0.5em;
+    max-width: 50%;
+  }
+  
+  .me {
+    align-self: flex-start;
+    background-color: blue;
+    color: white;
+  }
+  
+  .you {
+    align-self: flex-end;
+    background-color: green;
+    color: white;
+  }

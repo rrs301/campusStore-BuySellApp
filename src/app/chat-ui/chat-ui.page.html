@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="warning">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="user-chat-home"></ion-back-button>
+        </ion-buttons>
+    <ion-title>{{userEmail}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+  <!-- <div *ngFor="let MSG of UserMsgList" >
+    <div class="chat" style="padding: 27px;"  >
+        <div class="message me" *ngIf="MSG.sender==userEmail;else me">{{MSG.msg}}</div>
+        <ng-template #me>
+        <div class="message you" >{{MSG.msg}}</div>
+      </ng-template>
+       
+      </div>
+    </div> -->
+  
+    <div id="temp" style="    
+    height: 90%;padding-bottom: 75px;
+    overflow: auto;">
+      <div class="chat" style="padding: 27px;" *ngFor="let MSG of UserMsgList"  >
+          <div class="message me" *ngIf="MSG.sender==userEmail;else me" style="background: #FF9800;
+          border-radius: 25px;">{{MSG.msg}}</div>
+          <ng-template #me>
+          <div class="message you" style="    background: #03a9f4;
+          border-radius: 25px;">{{MSG.msg}}</div>
+        </ng-template>
+         
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-card style="bottom: 0;
+    width: 80%;
+    margin-bottom: 18px;
+    position: absolute;
+    font-size: 17px;
+    border-radius: 34px;
+    padding-left: 16px;
+" vertical="bottom">
+        <ion-input placeholder="Tyep Here" [(ngModel)]="Msg"></ion-input>
+       
+
+    </ion-card>
+    <span> 
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="SendMsg()">
+          <ion-fab-button>
+            <ion-icon name="send"></ion-icon>
+          </ion-fab-button>
+        </ion-fab></span>
+  </ion-footer>

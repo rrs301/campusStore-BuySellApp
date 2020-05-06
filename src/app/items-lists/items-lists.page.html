@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar color="warning">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+          </ion-buttons>
+      <ion-title>ItemsList</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-grid >
+      <ion-row >
+        <ion-col>
+          <div *ngFor="let item of items;let i=index">
+          <div *ngIf="i%2==0">
+            <ion-card style="    width: 100%;" (click)="productDetails(item.id)">
+              <span *ngIf="item.sell_rent==true" style="position: absolute;
+              right: 0px;
+              top: 0px;
+              background: #FF9800;
+              color: white;
+              /* padding: 8px; */
+              padding: 3px;
+              padding-left: 11px;
+              padding-right: 7px;
+              border-bottom-left-radius: 11px;">Rent</span>  <img src="{{item.image1}}" style="height: 150px;">
+                <div style="       padding: 7px;
+                font-size: 17px;">{{item.p_name}}</div>
+                <div style="    margin-left: 6px;
+                font-size: 20px;
+                color: black;margin-bottom: 5px;
+                font-weight: 600;">{{item.selling_for}}$</div>
+              </ion-card>
+            </div>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div *ngFor="let item of items;let i=index">
+          <div *ngIf="i%2!=0" style="margin-right: -10px;">
+            <ion-card  (click)="productDetails(item.id)" >
+              <span *ngIf="item.sell_rent=='true'" style="position: absolute;
+              right: 0px;
+              top: 0px;
+              background: #FF9800;
+              color: white;
+              /* padding: 8px; */
+              padding: 3px;
+              padding-left: 11px;
+              padding-right: 7px;
+              border-bottom-left-radius: 11px;">Rent</span>  <img src="{{item.image1}}" style="height: 150px;">
+                <div style="       padding: 7px;
+                font-size: 17px;">{{item.p_name}}</div>
+                <div style="    margin-left: 6px;
+                font-size: 20px;
+                color: black;margin-bottom: 5px;
+                font-weight: 600;">{{item.selling_for}}$</div>
+              </ion-card>
+            </div>
+          </div>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ImageUpload</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid style="margin-top: 3px;">
+    <ion-row style="text-align: center;">
+      <ion-col style="margin: 1px;">
+        <img [src]="image1" (click)="SelectFileToUpload(1)">
+      </ion-col>
+      <ion-col style="margin: 1px;" (click)="SelectFileToUpload(2)">
+          <img [src]="image2">
+   
+        </ion-col>
+        <ion-col style="margin: 1px;" (click)="SelectFileToUpload(3)">
+            <img [src]="image3">
+   
+          </ion-col>
+      </ion-row>
+      </ion-grid>
+
+</ion-content>
